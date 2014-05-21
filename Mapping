@@ -1,0 +1,15 @@
+workbook "child.xls" do
+  sheet "Child Details" do |sheet|
+    cell "Full Name" do
+      @data["first_name"] + ' ' + @data["last_name"]
+    end
+    cell "First Name", :first_name
+    cell "Last Name", :last_name
+    sheet.write 0, 5, "Some data"
+  end
+
+  sheet "Family Details" do
+    cell "Father's Name", :father_name
+    cell "Mother's Name", :mother_name
+  end
+end
